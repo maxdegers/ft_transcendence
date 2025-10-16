@@ -77,32 +77,32 @@ export const Layout = {
           <!-- Navigation droite -->
           <div class="flex items-center gap-4 mx-5">
             <!-- Sélecteur de langue -->
-<!--            <div class="flex items-center gap-2">-->
-<!--              <button -->
-<!--                id="lang-fr" -->
-<!--                class="w-8 h-6 transition bg-transparent hover:bg-gray-300" -->
-<!--                data-lang="fr"-->
-<!--                title="Français">-->
-<!--                🇫🇷-->
-<!--              </button>-->
-<!--              <button -->
-<!--                id="lang-en"-->
-<!--                class="w-8 h-6 transition hover:bg-gray-300 border-2"-->
-<!--                data-lang="en"-->
-<!--                title="English">-->
-<!--                🇺🇸-->
-<!--              </button>-->
-<!--              <button-->
-<!--                id="lang-es"-->
-<!--                class="w-8 h-6 transition hover:bg-gray-300 border-2"-->
-<!--                data-lang="es"-->
-<!--                title="Español">-->
-<!--                🇪🇸-->
-<!--              </button>-->
-<!--            </div>-->
+            <div class="flex items-center gap-2">
+              <button 
+                id="lang-fr" 
+                class="w-8 h-6 transition bg-transparent hover:bg-gray-300" 
+                data-lang="fr"
+                title="Français">
+                🇫🇷
+              </button>
+              <button 
+                id="lang-en"
+                class="w-8 h-6 transition hover:bg-gray-300 border-2"
+                data-lang="en"
+                title="English">
+                🇺🇸
+              </button>
+              <button
+                id="lang-es"
+                class="w-8 h-6 transition hover:bg-gray-300 border-2"
+                data-lang="es"
+                title="Español">
+                🇪🇸
+              </button>
+            </div>
             
             <!-- Séparateur -->
-<!--            <div class="w-px h-8 bg-gray-600"></div>-->
+            <div class="w-px h-8 bg-gray-600"></div>
             
             <!-- Bouton Login -->
             <button

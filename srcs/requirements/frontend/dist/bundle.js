@@ -132,32 +132,32 @@
           <!-- Navigation droite -->
           <div class="flex items-center gap-4 mx-5">
             <!-- S\xE9lecteur de langue -->
-<!--            <div class="flex items-center gap-2">-->
-<!--              <button -->
-<!--                id="lang-fr" -->
-<!--                class="w-8 h-6 transition bg-transparent hover:bg-gray-300" -->
-<!--                data-lang="fr"-->
-<!--                title="Fran\xE7ais">-->
-<!--                \u{1F1EB}\u{1F1F7}-->
-<!--              </button>-->
-<!--              <button -->
-<!--                id="lang-en"-->
-<!--                class="w-8 h-6 transition hover:bg-gray-300 border-2"-->
-<!--                data-lang="en"-->
-<!--                title="English">-->
-<!--                \u{1F1FA}\u{1F1F8}-->
-<!--              </button>-->
-<!--              <button-->
-<!--                id="lang-es"-->
-<!--                class="w-8 h-6 transition hover:bg-gray-300 border-2"-->
-<!--                data-lang="es"-->
-<!--                title="Espa\xF1ol">-->
-<!--                \u{1F1EA}\u{1F1F8}-->
-<!--              </button>-->
-<!--            </div>-->
+            <div class="flex items-center gap-2">
+              <button 
+                id="lang-fr" 
+                class="w-8 h-6 transition bg-transparent hover:bg-gray-300" 
+                data-lang="fr"
+                title="Fran\xE7ais">
+                \u{1F1EB}\u{1F1F7}
+              </button>
+              <button 
+                id="lang-en"
+                class="w-8 h-6 transition hover:bg-gray-300 border-2"
+                data-lang="en"
+                title="English">
+                \u{1F1FA}\u{1F1F8}
+              </button>
+              <button
+                id="lang-es"
+                class="w-8 h-6 transition hover:bg-gray-300 border-2"
+                data-lang="es"
+                title="Espa\xF1ol">
+                \u{1F1EA}\u{1F1F8}
+              </button>
+            </div>
             
             <!-- S\xE9parateur -->
-<!--            <div class="w-px h-8 bg-gray-600"></div>-->
+            <div class="w-px h-8 bg-gray-600"></div>
             
             <!-- Bouton Login -->
             <button
