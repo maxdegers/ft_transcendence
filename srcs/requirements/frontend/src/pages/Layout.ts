@@ -130,26 +130,28 @@ export const Layout = {
         <!-- Modal Login -->
         <div id="login-modal" class="fixed inset-0 hidden items-center justify-center backdrop-blur-lg z-50">
           <div class="border-1 border-gray-50 p-8 max-w-md w-full mx-4">
-            <h3 class="text-2xl font-bold mb-6 text-center text-gray-50">Login</h3>
+            <h3 data-i18n="loginModalTitle" class="text-2xl font-bold mb-6 text-center text-gray-50">Login</h3>
             
             <form id="login-form" class="space-y-4">
               <div>
-                <label class="block text-sm text-gray-50 font-bold mb-2">Username:</label>
+                <label data-i18n="username" class="block text-sm text-gray-50 font-bold mb-2">Username:</label>
                 <input 
                   type="text" 
                   id="username" 
                   class="w-full px-3 py-2 border-1 border-gray-400 text-gray-200 focus:outline-none focus:border-gray-50"
+                  data-i18n-placeholder="usernameInput"
                   placeholder="Enter your username"
                   required
                 >
               </div>
               
               <div>
-                <label class="block text-sm text-gray-500 font-bold mb-2">Password:</label>
+                <label data-i18n="password" class="block text-sm text-gray-500 font-bold mb-2">Password:</label>
                 <input 
                   type="password" 
                   id="password" 
                   class="w-full px-3 py-2 border-1 border-gray-400 text-gray-200 focus:outline-none focus:border-gray-50"
+                  data-i18n-placeholder="passwordInput"
                   placeholder="Enter your password"
                   required
                 >
@@ -158,30 +160,32 @@ export const Layout = {
               <div class="flex items-center justify-between">
                 <label class="flex items-center">
                   <input type="checkbox" id="remember-me" class="mr-2">
-                  <span class="text-sm text-gray-50">Remember me</span>
+                  <span data-i18n="rememberMe" class="text-sm text-gray-50">Remember me</span>
                 </label>
-                <button type="button" class="text-sm text-gray-50 hover:underline">
+                <button type="button" data-i18n="forgotPassword" class="text-sm text-gray-50 hover:underline">
                   Forgot password?
                 </button>
               </div>
               
               <div class="flex space-x-4 mt-6">
                 <button 
-                  type="submit" 
+                  type="submit"
+                  data-i18n="loginButton" 
                   class="flex-1 text-white py-2 px-4 border-1 border-gray-50 hover:border-blue-500 hover:bg-gray-700 transition-all font-bold">
                   LOGIN
                 </button>
                 <button 
                   type="button" 
-                  id="cancel-login" 
+                  id="cancel-login"
+                  data-i18n="cancelButton" 
                   class="flex-1 text-white py-2 px-4 border-1 border-gray-50 hover:border-red-500 hover:bg-gray-700 transition-all font-bold">
                   CANCEL
                 </button>
               </div>
               
               <div class="text-center mt-4 pt-4 border-t border-gray-300">
-                <p class="text-sm text-gray-400">Don't have an account?</p>
-                <button type="button" id="signup-btn" class="text-gray-50 hover:underline font-semibold">
+                <p data-i18n="noAccount" class="text-sm text-gray-400">Don't have an account?</p>
+                <button type="button" id="signup-btn" data-i18n="signupHere" class="text-gray-50 hover:underline font-semibold">
                   Sign up here
                 </button>
               </div>
@@ -192,37 +196,40 @@ export const Layout = {
         <!-- Modal Register -->
         <div id="register-modal" class="fixed inset-0 hidden items-center justify-center z-50 backdrop-blur-lg">
           <div class="border-1 border-white p-8 max-w-md w-full mx-4">
-            <h3 class="text-2xl text-gray-50 font-bold mb-6 text-center">Register</h3>
+            <h3 data-i18n="registerModalTitle" class="text-2xl text-gray-50 font-bold mb-6 text-center">Register</h3>
             
             <form id="register-form" class="space-y-4">
               <div>
-                <label class="block text-sm text-gray-50 font-bold mb-2">Username:</label>
+                <label data-i18n="username" class="block text-sm text-gray-50 font-bold mb-2">Username:</label>
                 <input 
                   type="text" 
                   id="reg-username" 
                   class="w-full px-3 py-2 border-1 border-gray-400 text-gray-200 focus:outline-none focus:border-gray-50"
+                  data-i18n-placeholder="usernameInput"
                   placeholder="Choose a username"
                   required
                 >
               </div>
               
               <div>
-                <label class="block text-sm text-gray-50 font-bold mb-2">Password:</label>
+                <label data-i18n="password" class="block text-sm text-gray-50 font-bold mb-2">Password:</label>
                 <input 
                   type="password" 
                   id="reg-password" 
                   class="w-full px-3 py-2 border-1 border-gray-400 text-gray-200 focus:outline-none focus:border-gray-50"
+                  data-i18n-placeholder="passwordInput"
                   placeholder="Create a password"
                   required
                 >
               </div>
               
               <div>
-                <label class="block text-sm text-gray-50 font-bold mb-2">Confirm Password:</label>
+                <label data-i18n="confirmPassword" class="block text-sm text-gray-50 font-bold mb-2">Confirm Password:</label>
                 <input 
                   type="password" 
                   id="reg-confirm-password" 
                   class="w-full px-3 py-2 border-1 border-gray-400 text-gray-200 focus:outline-none focus:border-gray-50"
+                  data-i18n-placeholder="confirmPasswordInput"
                   placeholder="Confirm your password"
                   required
                 >
@@ -230,21 +237,23 @@ export const Layout = {
               
               <div class="flex space-x-4 mt-6">
                 <button 
-                  type="submit" 
+                  type="submit"
+                  data-i18n="registerButton" 
                   class="flex-1 text-white py-2 px-4 border-1 border-white hover:border-green-500 hover:bg-gray-700 transition-colors font-bold">
                   REGISTER
                 </button>
                 <button 
                   type="button" 
-                  id="cancel-register" 
+                  id="cancel-register"
+                  data-i18n="cancelButton" 
                   class="flex-1 text-white py-2 px-4 border-1 border-white hover:border-red-500 hover:bg-gray-700 transition-colors font-bold">
                   CANCEL
                 </button>
               </div>
               
               <div class="text-center mt-4 pt-4 border-t border-gray-300">
-                <p class="text-sm text-gray-400">Already have an account?</p>
-                <button type="button" id="back-to-login" class="text-gray-50 hover:underline font-semibold">
+                <p data-i18n="haveAccount" class="text-sm text-gray-400">Already have an account?</p>
+                <button type="button" id="back-to-login" data-i18n="loginHere" class="text-gray-50 hover:underline font-semibold">
                   Login here
                 </button>
               </div>
@@ -480,6 +489,12 @@ export const Layout = {
       if (key === "login" && localStorage.getItem("isLoggedIn")) return;
 
       if (t[key]) el.textContent = t[key];
+    });
+
+    // Handle placeholders
+    root.querySelectorAll<HTMLInputElement>("[data-i18n-placeholder]").forEach(el => {
+      const key = el.dataset.i18nPlaceholder as keyof typeof t;
+      if (t[key]) el.placeholder = t[key];
     });
   },
 

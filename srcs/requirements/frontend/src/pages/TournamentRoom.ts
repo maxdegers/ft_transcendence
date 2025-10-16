@@ -75,11 +75,11 @@ export const TournamentRoom: Page = {
 
 		<div class="bg-white border-2 border-black p-8">
 			<div class="flex justify-center">
-				<h1 class="text-2xl font-bold text-center">Tournament</h1>
+				<h1 data-i18n="tournament" class="text-2xl font-bold text-center">Tournament</h1>
 			</div>
 			<div class="text-center mb-8">
 				<div class="flex justify-center space-x-4">
-					<button id="create-tournament-btn" class="px-8 py-3 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
+					<button id="create-tournament-btn" data-i18n="createTournament" class="px-8 py-3 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
 						+ Create a Tournament
 					</button>
 				</div>
@@ -94,7 +94,7 @@ export const TournamentRoom: Page = {
 		<!-- Available Tournament Section -->
 		<div class="bg-white border-2 border-black p-6">
 			<div class="flex justify-between items-center mb-6">
-				<h2 class="text-2xl font-bold">Available Tournament</h2>
+				<h2 data-i18n="availableTournament" class="text-2xl font-bold">Available Tournament</h2>
 				<button id="reload-btn" class="px-4 py-2 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
 					🔄 Reload
 				</button>
@@ -108,11 +108,11 @@ export const TournamentRoom: Page = {
 	<!-- Modal Create Tournament -->
 	<div id="create-tournament-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
 		<div class="bg-white border-4 border-black p-8 max-w-md w-full mx-4">
-			<h3 class="text-2xl font-bold mb-6 text-center">Create a Tournament</h3>
+			<h3 data-i18n="createTournamentModal" class="text-2xl font-bold mb-6 text-center">Create a Tournament</h3>
 			
 			<form id="create-tournament-form" class="space-y-4">
 				<div>
-					<label class="block text-sm font-bold mb-2">Tournament Name:</label>
+					<label data-i18n="tournamentName" class="block text-sm font-bold mb-2">Tournament Name:</label>
 					<input 
 						type="text" 
 						id="tournament-name" 
@@ -123,7 +123,7 @@ export const TournamentRoom: Page = {
 				</div>
 
 				<div>
-					<label class="block text-sm font-bold mb-2">Number of Players:</label>
+					<label data-i18n="numberOfPlayers" class="block text-sm font-bold mb-2">Number of Players:</label>
 					<select id="player-count" class="w-full px-3 py-2 border-2 border-black focus:outline-none">
 						<option value="8">8</option>
 						<option value="4">4</option>
@@ -131,7 +131,7 @@ export const TournamentRoom: Page = {
 				</div>
 				
 				<div>
-					<label class="block text-sm font-bold mb-2">Party Point(s):</label>
+					<label data-i18n="partyPoints" class="block text-sm font-bold mb-2">Party Point(s):</label>
 					<select id="game-point" class="w-full px-3 py-2 border-2 border-black focus:outline-none">
 						<option value="3">3</option>
 						<option value="5">5</option>
@@ -141,7 +141,7 @@ export const TournamentRoom: Page = {
 				</div>
 				
 				<div>
-					<label class="block text-sm font-bold mb-2">Game Mode:</label>
+					<label data-i18n="gameMode" class="block text-sm font-bold mb-2">Game Mode:</label>
 					<select id="game-mode" class="w-full px-3 py-2 border-2 border-black focus:outline-none">
 						<option value="classic">Classic Pong</option>
 						<option value="power-up">Power-up Mode</option>

@@ -21,7 +21,7 @@ const Stats: StatsPage = {
           <div class="relative z-10 text-7xl text-transparent bg-clip-text
               bg-gradient-to-r from-red-500 via-blue-500 to-green-500
               bg-[length:200%_100%] bg-[position:0%_100%]">
-            Profil
+            <span data-i18n="profile">Profil</span>
           </div>
         </div>
     </button>
@@ -32,7 +32,7 @@ const Stats: StatsPage = {
           <div class="relative z-10 text-7xl text-transparent bg-clip-text
               bg-gradient-to-r from-red-500 via-blue-500 to-green-500
               bg-[length:200%_100%] bg-[position:100%_100%]">
-            Historique
+            <span data-i18n="historyTab">Historique</span>
           </div>
         </div>
       </button>
@@ -41,58 +41,58 @@ const Stats: StatsPage = {
 
   <!-- Contenu dynamique -->
   <div id="content-container" class="w-[1200px] h-[700px]">
-    ${activeTab === 'profile' ? this.renderProfile() : this.renderHistory()}
+    ${activeTab === 'profile' ? this.render<span data-i18n="profile">Profil</span>e() : this.renderHistory()}
   </div>
 </div>
   `;
 },
 
-  renderProfile() {
+  render<span data-i18n="profile">Profil</span>e() {
     // language=HTML
     return `
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-  <!-- Profil Section -->
+  <!-- <span data-i18n="profile">Profil</span> Section -->
   <div class="backdrop-blur-2xs border-1 border-gray-50 p-6">
     <!-- Avatar -->
     <div class="text-center mb-6">
       <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 flex items-center justify-center">
         <span class="text-3xl">👤</span>
       </div>
-      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-avatar">CHANGE AVATAR</p>
+      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-avatar"><span data-i18n="changeAvatar">CHANGE AVATAR</span></p>
     </div>
 
     <!-- Username -->
     <div class="text-center mb-6">
       <p class="text-sm text-gray-600 bg-gray-200 font-semibold mb-1 p-2">LUCAS</p>
-      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-username">CHANGE USERNAME</p>
+      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-username"><span data-i18n="changeUsername">CHANGE USERNAME</span></p>
     </div>
 
     <!-- Mail -->
     <div class="text-center mb-6">
       <p class="text-sm text-gray-600 bg-gray-200 font-semibold mb-1 p-2">LUCA@GMAIL.COM</p>
-      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-mail">CHANGE MAIL</p>
+      <p class="text-xs text-blue-500 underline cursor-pointer" id="change-mail"><span data-i18n="changeMail">CHANGE MAIL</span></p>
     </div>
 
     <!-- Main stats -->
     <div class="grid grid-cols-3 gap-4 text-center mt-8">
       <div>
         <div class="text-2xl font-bold text-gray-800" id="stats-rank">2</div>
-        <div class="text-sm text-gray-600">Rank</div>
+        <div data-i18n="rank" class="text-sm text-gray-600">Rank</div>
       </div>
       <div>
         <div class="text-2xl font-bold text-gray-800" id="stats-win-rate">42%</div>
-        <div class="text-sm text-gray-600">Win Rate</div>
+        <div data-i18n="winRate" class="text-sm text-gray-600">Win Rate</div>
       </div>
       <div>
         <div class="text-2xl font-bold text-gray-800" id="stats-friends">0</div>
-        <div class="text-sm text-gray-600">Friends</div>
+        <div data-i18n="friends" class="text-sm text-gray-600">Friends</div>
       </div>
     </div>
   </div>
 
   <!-- Detailed stats -->
   <div class="backdrop-blur-2xs border-1 border-gray-50 p-6">
-    <h3 class="text-lg font-semibold mb-4 text-gray-100">Statistiques</h3>
+    <h3 data-i18n="statistics" class="text-lg font-semibold mb-4 text-gray-100">Statistiques</h3>
     <div class="space-y-4">
       <div class="flex justify-between items-center py-2 border-b border-gray-700">
         <span class="text-sm font-medium text-gray-300">Parties jouées :</span>
@@ -204,10 +204,10 @@ const Stats: StatsPage = {
                       </div>
                   </div>
   
-                  <!-- Historique des matches -->
+                  <!-- <span data-i18n="historyTab">Historique</span> des matches -->
                   <div class="bg-white overflow-hidden">
                       <div class="px-6 py-4 border-b border-gray-200">
-                          <h3 class="text-lg font-semibold text-gray-800">📈 Historique des matches</h3>
+                          <h3 class="text-lg font-semibold text-gray-800">📈 <span data-i18n="historyTab">Historique</span> des matches</h3>
                       </div>
                       
                       <div class="overflow-x-auto">
@@ -331,9 +331,9 @@ const Stats: StatsPage = {
 
     const renderContent = () => {
       if (contentContainer) {
-        contentContainer.innerHTML = activeTab === 'profile' ? this.renderProfile() : this.renderHistory();
+        contentContainer.innerHTML = activeTab === 'profile' ? this.render<span data-i18n="profile">Profil</span>e() : this.renderHistory();
         if (activeTab === 'profile') {
-          this.mountProfileEvents(contentContainer);
+          this.mount<span data-i18n="profile">Profil</span>eEvents(contentContainer);
         }
       }
     };
@@ -344,7 +344,7 @@ const Stats: StatsPage = {
       indicator.style.transform = translate;
     };
 
-    const switchToProfile = () => {
+    const switchTo<span data-i18n="profile">Profil</span>e = () => {
       if (activeTab === 'profile') return;
       activeTab = 'profile';
       updateIndicator();
@@ -359,7 +359,7 @@ const Stats: StatsPage = {
     };
 
     if (profileTab) {
-      profileTab.addEventListener('click', switchToProfile);
+      profileTab.addEventListener('click', switchTo<span data-i18n="profile">Profil</span>e);
     }
 
     if (historyTab) {
@@ -370,7 +370,7 @@ const Stats: StatsPage = {
       renderContent();
   },
 
-  mountProfileEvents(root: HTMLElement) {
+  mount<span data-i18n="profile">Profil</span>eEvents(root: HTMLElement) {
     // Change username
     const changeUsername = root.querySelector('#change-username') as HTMLElement;
     if (changeUsername) {
