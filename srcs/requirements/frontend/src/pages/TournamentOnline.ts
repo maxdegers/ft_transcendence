@@ -22,14 +22,14 @@ export const TournamentOnline: Page = {
 				<div class="max-w-7xl mx-auto mb-8">
 					<div class="flex items-center justify-center mb-8">
 						<div class="w-32 h-1 bg-gradient-to-r from-transparent to-yellow-500"></div>
-						<h1 class="text-5xl font-bold mx-4 text-yellow-400 tracking-wider">⚔ TOURNAMENT ⚔</h1>
+						<h1 data-i18n="tournamentHeader" class="text-5xl font-bold mx-4 text-yellow-400 tracking-wider">⚔ TOURNAMENT ⚔</h1>
 						<div class="w-32 h-1 bg-gradient-to-l from-transparent to-yellow-500"></div>
 					</div>
 				</div>
 
 				<!-- Tournament Setup (visible initially) -->
 				<div id="tournament-setup" class="max-w-2xl mx-auto bg-slate-800/80 backdrop-blur-sm rounded-lg p-8 shadow-2xl border-2 border-blue-500">
-					<h2 class="text-3xl font-bold mb-6 text-center text-blue-300">Setup Tournament</h2>
+					<h2 data-i18n="setupTournament" class="text-3xl font-bold mb-6 text-center text-blue-300">Setup Tournament</h2>
 					
 					<!-- Player Input -->
 					<div class="space-y-4 mb-6">
@@ -37,7 +37,7 @@ export const TournamentOnline: Page = {
 							<input 
 								type="text" 
 								id="player-name-input" 
-								placeholder="Enter player name"
+								data-i18n-placeholder="playerNameInput" placeholder="Enter player name"
 								class="flex-1 px-4 py-3 bg-slate-700 border-2 border-slate-600 rounded-lg focus:border-blue-500 focus:outline-none text-white placeholder-slate-400"
 							/>
 							<button 
@@ -72,7 +72,7 @@ export const TournamentOnline: Page = {
 							<!-- Round 1: Quarter Finals -->
 							<div class="flex flex-col gap-8">
 								<div class="text-center mb-4">
-									<h3 class="text-2xl font-bold text-yellow-400">Quarter Finals</h3>
+									<h3 data-i18n="quarterFinals" class="text-2xl font-bold text-yellow-400">Quarter Finals</h3>
 								</div>
 								<div id="round-1" class="flex flex-col gap-16">
 									<!-- Matches will be generated here -->
@@ -82,7 +82,7 @@ export const TournamentOnline: Page = {
 							<!-- Round 2: Semi Finals -->
 							<div class="flex flex-col gap-8">
 								<div class="text-center mb-4">
-									<h3 class="text-2xl font-bold text-yellow-400">Semi Finals</h3>
+									<h3 data-i18n="semiFinals" class="text-2xl font-bold text-yellow-400">Semi Finals</h3>
 								</div>
 								<div id="round-2" class="flex flex-col gap-32">
 									<!-- Matches will be generated here -->
@@ -92,7 +92,7 @@ export const TournamentOnline: Page = {
 							<!-- Round 3: Final -->
 							<div class="flex flex-col gap-8">
 								<div class="text-center mb-4">
-									<h3 class="text-2xl font-bold text-yellow-400">Final</h3>
+									<h3 data-i18n="final" class="text-2xl font-bold text-yellow-400">Final</h3>
 								</div>
 								<div id="round-3" class="flex flex-col justify-center min-h-[400px]">
 									<!-- Final match will be generated here -->
@@ -102,7 +102,7 @@ export const TournamentOnline: Page = {
 							<!-- Winner -->
 							<div class="flex flex-col gap-8">
 								<div class="text-center mb-4">
-									<h3 class="text-2xl font-bold text-yellow-400">🏆 Winner 🏆</h3>
+									<h3 data-i18n="winner" class="text-2xl font-bold text-yellow-400">🏆 Winner 🏆</h3>
 								</div>
 								<div id="winner-container" class="flex flex-col justify-center min-h-[400px]">
 									<!-- Winner will be displayed here -->

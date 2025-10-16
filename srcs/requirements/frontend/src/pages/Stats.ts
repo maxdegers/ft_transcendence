@@ -41,17 +41,17 @@ const Stats: StatsPage = {
 
   <!-- Contenu dynamique -->
   <div id="content-container" class="w-[1200px] h-[700px]">
-    ${activeTab === 'profile' ? this.render<span data-i18n="profile">Profil</span>e() : this.renderHistory()}
+    ${activeTab === 'profile' ? this.renderProfile() : this.renderHistory()}
   </div>
 </div>
   `;
 },
 
-  render<span data-i18n="profile">Profil</span>e() {
+  renderProfile() {
     // language=HTML
     return `
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-  <!-- <span data-i18n="profile">Profil</span> Section -->
+  <!-- Profile Section -->
   <div class="backdrop-blur-2xs border-1 border-gray-50 p-6">
     <!-- Avatar -->
     <div class="text-center mb-6">
@@ -95,23 +95,23 @@ const Stats: StatsPage = {
     <h3 data-i18n="statistics" class="text-lg font-semibold mb-4 text-gray-100">Statistiques</h3>
     <div class="space-y-4">
       <div class="flex justify-between items-center py-2 border-b border-gray-700">
-        <span class="text-sm font-medium text-gray-300">Parties jouées :</span>
+        <span data-i18n="gamesPlayed" class="text-sm font-medium text-gray-300">Parties jouées :</span>
         <span class="text-sm font-bold text-gray-400" id="stats-games-played">42</span>
       </div>
       <div class="flex justify-between items-center py-2 border-b border-gray-700">
-        <span class="text-sm font-medium text-gray-300">Victoires :</span>
+        <span data-i18n="victories" class="text-sm font-medium text-gray-300">Victoires :</span>
         <span class="text-sm font-bold text-green-600" id="stats-wins">18</span>
       </div>
       <div class="flex justify-between items-center py-2 border-b border-gray-700">
-        <span class="text-sm font-medium text-gray-300">Défaites :</span>
+        <span data-i18n="defeats" class="text-sm font-medium text-gray-300">Défaites :</span>
         <span class="text-sm font-bold text-red-600" id="stats-losses">24</span>
       </div>
       <div class="flex justify-between items-center py-2 border-b border-gray-700">
-        <span class="text-sm font-medium text-gray-300">Meilleur score :</span>
+        <span data-i18n="bestScore" class="text-sm font-medium text-gray-300">Meilleur score :</span>
         <span class="text-sm font-bold text-purple-600" id="stats-best-score">1200</span>
       </div>
       <div class="flex justify-between items-center py-2">
-        <span class="text-sm font-medium text-gray-300">Temps de jeu :</span>
+        <span data-i18n="playTime" class="text-sm font-medium text-gray-300">Temps de jeu :</span>
         <span class="text-sm font-bold text-blue-600" id="stats-playtime">12h 34m</span>
       </div>
     </div>
@@ -121,7 +121,7 @@ const Stats: StatsPage = {
   <div class="space-y-6">
     <!-- Online Friends -->
     <div class="backdrop-blur-2xs border-1 border-gray-50 p-6">
-      <h3 class="text-lg font-semibold mb-4 text-gray-100">Online Friends</h3>
+      <h3 data-i18n="onlineFriends" class="text-lg font-semibold mb-4 text-gray-100">Online Friends</h3>
       <ul class="space-y-3">
         <li class="flex items-center justify-between">
           <span class="text-gray-700 flex items-center">
@@ -129,7 +129,7 @@ const Stats: StatsPage = {
               BOB
           </span>
           <button class="px-3 py-1 text-xs bg-blue-500 text-white hover:bg-blue-600 transition-colors">
-            Invite
+            <span data-i18n="inviteButton">Invite</span>
           </button>
         </li>
         <li class="flex items-center justify-between">
@@ -138,7 +138,7 @@ const Stats: StatsPage = {
             Mike
           </span>
           <button class="px-3 py-1 text-xs bg-blue-500 text-white hover:bg-blue-600 transition-colors">
-            Invite
+            <span data-i18n="inviteButton">Invite</span>
           </button>
         </li>
         <li class="flex items-center justify-between">
@@ -147,7 +147,7 @@ const Stats: StatsPage = {
             Mathis
           </span>
           <button class="px-3 py-1 text-xs bg-blue-500 text-white hover:bg-blue-600 transition-colors">
-            Invite
+            <span data-i18n="inviteButton">Invite</span>
           </button>
         </li>
       </ul>
@@ -155,7 +155,7 @@ const Stats: StatsPage = {
 
     <!-- Offline Friends -->
     <div class="backdrop-blur-2xs border-1 border-gray-50 p-6">
-      <h3 class="text-lg font-semibold mb-4 text-gray-100">Offline Friends</h3>
+      <h3 data-i18n="offlineFriends" class="text-lg font-semibold mb-4 text-gray-100">Offline Friends</h3>
       <ul class="space-y-3">
         <li class="flex items-center">
           <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
@@ -204,10 +204,10 @@ const Stats: StatsPage = {
                       </div>
                   </div>
   
-                  <!-- <span data-i18n="historyTab">Historique</span> des matches -->
+                  <!-- Historique des matches -->
                   <div class="bg-white overflow-hidden">
                       <div class="px-6 py-4 border-b border-gray-200">
-                          <h3 class="text-lg font-semibold text-gray-800">📈 <span data-i18n="historyTab">Historique</span> des matches</h3>
+                          <h3 class="text-lg font-semibold text-gray-800">📈 Historique des matches</h3>
                       </div>
                       
                       <div class="overflow-x-auto">
@@ -331,9 +331,9 @@ const Stats: StatsPage = {
 
     const renderContent = () => {
       if (contentContainer) {
-        contentContainer.innerHTML = activeTab === 'profile' ? this.render<span data-i18n="profile">Profil</span>e() : this.renderHistory();
+        contentContainer.innerHTML = activeTab === 'profile' ? this.renderProfile() : this.renderHistory();
         if (activeTab === 'profile') {
-          this.mount<span data-i18n="profile">Profil</span>eEvents(contentContainer);
+          this.mountProfileEvents(contentContainer);
         }
       }
     };
@@ -344,7 +344,7 @@ const Stats: StatsPage = {
       indicator.style.transform = translate;
     };
 
-    const switchTo<span data-i18n="profile">Profil</span>e = () => {
+    const switchToProfile = () => {
       if (activeTab === 'profile') return;
       activeTab = 'profile';
       updateIndicator();
@@ -359,7 +359,7 @@ const Stats: StatsPage = {
     };
 
     if (profileTab) {
-      profileTab.addEventListener('click', switchTo<span data-i18n="profile">Profil</span>e);
+      profileTab.addEventListener('click', switchToProfile);
     }
 
     if (historyTab) {
@@ -370,7 +370,7 @@ const Stats: StatsPage = {
       renderContent();
   },
 
-  mount<span data-i18n="profile">Profil</span>eEvents(root: HTMLElement) {
+  mountProfileEvents(root: HTMLElement) {
     // Change username
     const changeUsername = root.querySelector('#change-username') as HTMLElement;
     if (changeUsername) {
@@ -407,10 +407,10 @@ const Stats: StatsPage = {
       });
     }
 
-    // Invite buttons
+    // <span data-i18n="inviteButton">Invite</span> buttons
     const inviteButtons = root.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
     inviteButtons.forEach(btn => {
-      if (btn.textContent?.includes('Invite')) {
+      if (btn.textContent?.includes('<span data-i18n="inviteButton">Invite</span>')) {
         btn.addEventListener('click', (e) => {
           const friendName = btn.closest('li')?.querySelector('span')?.textContent?.trim();
           alert(`🎮 Invitation envoyée à ${friendName} !`);
