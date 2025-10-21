@@ -75,9 +75,9 @@ export const Layout = {
           </div>
           
           <!-- Navigation droite -->
-          <div class="flex items-center gap-4 mx-5">
+         <div class="flex items-center gap-4 mx-5">
             <!-- Sélecteur de langue -->
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2"> 
               <button 
                 id="lang-fr" 
                 class="w-8 h-6 transition bg-transparent hover:bg-gray-300" 
