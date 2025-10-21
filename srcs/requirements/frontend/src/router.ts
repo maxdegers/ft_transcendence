@@ -37,7 +37,7 @@ const getPath = (): string => {
 export function startRouter(){
   const root = document.getElementById("root")!;
 
-  const render = () => {
+  const render = async () => {
 	const path = getPath();
 	const page = routes[path];
 	
@@ -49,6 +49,10 @@ export function startRouter(){
 	  
 	  // Mount layout first
 	  Layout.mount(root);
+	  
+	  // Apply translations
+	  const lang = localStorage.getItem('language') || 'fr';
+	  await Layout.changeLanguage(root, lang);
 	  
 	  // Then mount page-specific functionality
 	  const pageContentElement = root.querySelector('#page-content') as HTMLElement;

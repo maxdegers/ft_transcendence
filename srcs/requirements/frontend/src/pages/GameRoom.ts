@@ -75,35 +75,33 @@ export const GameRoom: Page = {
 
 		<div class="bg-white border-2 border-black p-8">
 			<div class="flex justify-center">
-				<h1 class="text-2xl font-bold text-center">Ranked Game</h1>
+				<h1 data-i18n="rankedGame" class="text-2xl font-bold text-center">Ranked Game</h1>
 			</div>
 			<div class="text-center mb-8">
 				<div class="flex justify-center space-x-4">
 					
 					<button id="vs-btn" class="px-8 py-3 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
-						👤 vs 👤
+						<span data-i18n="vsButton">👤 vs 👤</span>
 					</button>
 					</div>
-				<p>
-					Le mode <span class="font-bold">Ranked</span> vous permet d'affronter un autre joueur dans une partie compétitive en 1 contre 1.<br>
-					Chaque victoire ou défaite affecte votre classement général.<br>
-					Relevez le défi pour grimper dans le classement et montrer vos compétences !
+				<p data-i18n="rankedDesc">
+					Le mode Ranked vous permet d'affronter un autre joueur dans une partie compétitive en 1 contre 1. Chaque victoire ou défaite affecte votre classement général. Relevez le défi pour grimper dans le classement et montrer vos compétences !
 				</p>
 			</div>
 		</div>
 
 		<div class="bg-white border-2 border-black p-8">
 			<div class="flex justify-center">
-				<h1 class="text-2xl font-bold text-center">Frendly Game</h1>
+				<h1 data-i18n="friendlyGame" class="text-2xl font-bold text-center">Frendly Game</h1>
 			</div>
 			<div class="text-center mb-8">
 				<div class="flex justify-center space-x-4">
 					
-					<button id="create-room-btn" class="px-8 py-3 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
+					<button id="create-room-btn" data-i18n="createRoom" class="px-8 py-3 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
 						+ Create a room
 					</button>
 				</div>
-				<p>
+				<p data-i18n="friendlyDesc">
 					Le mode <span class="font-bold">Friendly</span> vous permet de jouer des parties amicales sans impact sur votre classement.<br>
 					Créez une salle ou rejoignez celle d'un ami pour vous entraîner, tester de nouvelles stratégies ou simplement vous amuser sans pression.<br>
 					C'est l'endroit idéal pour défier vos amis ou rencontrer de nouveaux joueurs dans une ambiance détendue !
@@ -114,8 +112,8 @@ export const GameRoom: Page = {
 		<!-- Available Rooms Section -->
 		<div class="bg-white border-2 border-black p-6">
 			<div class="flex justify-between items-center mb-6">
-				<h2 class="text-2xl font-bold">Available rooms</h2>
-				<button id="reload-btn" class="px-4 py-2 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
+				<h2 data-i18n="availableRooms" class="text-2xl font-bold">Available rooms</h2>
+				<button id="reload-btn" data-i18n="reloadButton" class="px-4 py-2 border-2 border-black bg-white hover:bg-gray-100 transition-colors font-mono">
 					🔄 Reload
 				</button>
 			</div>
@@ -128,22 +126,23 @@ export const GameRoom: Page = {
 	<!-- Modal Create Room -->
 	<div id="create-room-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
 		<div class="bg-white border-4 border-black p-8 max-w-md w-full mx-4">
-			<h3 class="text-2xl font-bold mb-6 text-center">Create a Room</h3>
+			<h3 data-i18n="createRoomModal" class="text-2xl font-bold mb-6 text-center">Create a Room</h3>
 			
 			<form id="create-room-form" class="space-y-4">
 				<div>
-					<label class="block text-sm font-bold mb-2">Room Name:</label>
+					<label data-i18n="roomName" class="block text-sm font-bold mb-2">Room Name:</label>
 					<input 
 						type="text" 
 						id="room-name" 
 						class="w-full px-3 py-2 border-2 border-black focus:outline-none focus:border-blue-500"
+						data-i18n-placeholder="roomNameInput"
 						placeholder="Enter room name"
 						required
 					>
 				</div>
 				
 				<div>
-					<label class="block text-sm font-bold mb-2">Party Point (s):</label>
+					<label data-i18n="partyPoints" class="block text-sm font-bold mb-2">Party Point (s):</label>
 					<select id="game-point" class="w-full px-3 py-2 border-2 border-black focus:outline-none">
 						<option value="3">3</option>
 						<option value="5">5</option>
@@ -153,22 +152,24 @@ export const GameRoom: Page = {
 				</div>
 				
 				<div>
-					<label class="block text-sm font-bold mb-2">Game Mode:</label>
+					<label data-i18n="gameMode" class="block text-sm font-bold mb-2">Game Mode:</label>
 					<select id="game-mode" class="w-full px-3 py-2 border-2 border-black focus:outline-none">
-						<option value="classic">Classic Pong</option>
-						<option value="power-up">Power-up Mode</option>
+						<option data-i18n="classicPong" value="classic">Classic Pong</option>
+						<option data-i18n="powerUpMode" value="power-up">Power-up Mode</option>
 					</select>
 				</div>
 				
 				<div class="flex space-x-4 mt-6">
 					<button 
-						type="submit" 
+						type="submit"
+						data-i18n="createButton" 
 						class="flex-1 bg-green-500 text-white py-2 px-4 border-2 border-black hover:bg-green-600 transition-colors font-bold">
 						CREATE
 					</button>
 					<button 
 						type="button" 
-						id="cancel-create" 
+						id="cancel-create"
+						data-i18n="cancelButton" 
 						class="flex-1 bg-red-500 text-white py-2 px-4 border-2 border-black hover:bg-red-600 transition-colors font-bold">
 						CANCEL
 					</button>

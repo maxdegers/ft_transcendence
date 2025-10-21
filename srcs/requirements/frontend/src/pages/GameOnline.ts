@@ -13,7 +13,7 @@ export const GameOnline: Page = {
         </div>
         <div class="flex flex-col gap-4 items-center">
             <div class="text-white text-2xl">
-            <p>Player : { W / S } keys & { ↑ / ↓ } keys</p>
+            <p data-i18n="playerControls">Player : { W / S } keys & { ↑ / ↓ } keys</p>
             </div>
             </div>
             </div>

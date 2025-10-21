@@ -2,3 +2,7 @@ secrets
 srcs/.env
 .idea
 .vscode
+node_modules/
+dist/
+*.log
+package-lock.json
