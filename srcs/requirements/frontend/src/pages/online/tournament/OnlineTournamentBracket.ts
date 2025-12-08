@@ -241,13 +241,13 @@ export const OnlineTournamentBracket: Page = {
       ws.send(JSON.stringify(payLoad));
 
     const popstateHandler = (event: PopStateEvent) => {
-      const path = window.location.pathname.toLowerCase();
+      const path = window.location.pathname;
       // If we're still on a tournament-related page (Tournament Online or LocalGame Online), don't notify server about leaving
-      if (path.includes('online-tournament') || path.includes('online-tournament-game')) {
+      if (path === '/online-tournament' || path === '/online-tournament-game') {
         return;
       }
       _restoreLoginBtn();
-      
+
       const payLoad = {
         "method": "leave",
         "clientId": clientId
@@ -256,10 +256,10 @@ export const OnlineTournamentBracket: Page = {
       if (ws)
         ws.send(JSON.stringify(payLoad));
 
-      if (sessionStorage.getItem('gamestate') === 'playing-game') {
-        if (ws)
-          ws.close();
-      }
+      // if (sessionStorage.getItem('gamestate') === 'playing-game') {
+      //   if (ws)
+      //     ws.close();
+      // }
 
       sessionStorage.removeItem('tournamentName');
       sessionStorage.removeItem('tournamentId');
@@ -272,6 +272,7 @@ export const OnlineTournamentBracket: Page = {
     };
 
     if (ws) {
+      window.addEventListener('popstate', popstateHandler);
       ws.onmessage = message => {
 
         const response = JSON.parse(message.data);
@@ -535,8 +536,8 @@ export const OnlineTournamentBracket: Page = {
         }
       }
     } else {
-      window.removeEventListener('popstate', popstateHandler);
-      const p = '/';
+      // window.removeEventListener('popstate', popstateHandler);
+      const p = '/tournament-room';
       history.replaceState(null, '', p);
       window.dispatchEvent(new PopStateEvent('popstate'));
     }
@@ -573,6 +574,5 @@ export const OnlineTournamentBracket: Page = {
         window.dispatchEvent(new PopStateEvent('popstate'));
       });
     }
-    window.addEventListener('popstate', popstateHandler);
   }
 };

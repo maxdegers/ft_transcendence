@@ -106,6 +106,7 @@ function leave(clientId) {
 
 	const client = g_Games.findClient(clientId);
 	if (!client) {
+		console.log('leave: client not found', clientId);
 		return;
 	}
 
